@@ -1,29 +1,17 @@
 import os
 import csv
 
-#The total number of months included in the dataset
-#not a len function, but a comparison If month of date is not in dictionary, add to dictionary
-
-    # resulting MonthlyProfit = {1 MonthlyTotalProfitLosses,2,3,4,5,6,7,8,9,10,11,12}
-
-#The net total amount of ProfitLosses over the entire period
-#sum of profitlosses column
-
-#The changes in ProfitLosses over the entire period, and then the average of those changes
-
-#The greatest increase in profits (date and amount) over the entire period
-#maximum of profitlosses, and return date
-
-#The greatest decrease in profits (date and amount) over the entire period
-#minimum of profitlosses, and return date
-
-
 #Declare variable values
 months = []
 ChangeInProfit = []
+MonthCount = 0
+TotalProfit = 0
+CurrentProfit = 0
+PriorProfit = 0
+ChangeInProfit = 0
 
 #Import csv file
-BudgetData_csv = os.path.join('Resources','budget_data.csv')
+BudgetData_csv = os.path.join('.', 'Resources','budget_data.csv')
 
 # Open and read csv
 with open(BudgetData_csv) as csv_file:
