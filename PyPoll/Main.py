@@ -6,21 +6,25 @@ import csv
 cand_list = {}
 break_line = "------------------------------"
 
+# Import csv file
 csvpath = os.path.join(".", "Resources", "election_data.csv")  
 
-
+# Open and read csv
 with open(csvpath) as csvfile:
     csv_reader = csv.reader(csvfile, delimiter = ",")
+    #Read the header row first (skip this part if there is no header)
     csv_header = next(csv_reader)
     total_vote = 0
     for row in csv_reader:
+        #increase total_vote
         total_vote += 1
         name = row[2]
         if name in cand_list:
             cand_list[name] += 1
         else:
             cand_list[name] = 1
-    
+
+#calculate who won    
 cand_list["Khan Percent"] = round((cand_list["Khan"]/total_vote) * 100, 2)
 cand_list["Correy Percent"] = round((cand_list["Correy"]/total_vote) * 100, 2)
 cand_list["Li Percent"] = round((cand_list["Li"]/total_vote) * 100, 2)
@@ -28,6 +32,7 @@ cand_list["O'Tooley Percent"] = round((cand_list["O'Tooley"]/total_vote) * 100, 
 
 cand_winner = max(cand_list, key=cand_list.get)
 
+#print the results
 print("Election Results")
 print(break_line)
 print("Total Vote: " + str(total_vote))
@@ -40,6 +45,7 @@ print(break_line)
 print("Winner: " + str(cand_winner))
 print(break_line)
 
+#write results to result.txt analysis file
 output_result = os.path.join(".", "analysis", "result.txt")
 
 with open(output_result, "w") as txt_file:
