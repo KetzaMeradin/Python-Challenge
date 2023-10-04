@@ -159,3 +159,9 @@ B (+/-)	80–89
 C (+/-)	70–79
 D (+/-)	60–69
 F (+/-)	< 60
+
+Code resources:
+PyBank- https://github.com/ofunkey/python-challenge/tree/master/PyBank/main.py
+PyPoll- https://github.com/eddiexunyc/python-challenge/blob/main/PyPoll/main.py
+These two were resources for the respective main.py documents in the PyBank and PyPoll folders in my repository.
+
