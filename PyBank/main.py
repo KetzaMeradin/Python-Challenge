@@ -1,6 +1,8 @@
 import os
 import csv
 
+#Inspiration derived from/code sourced from: https://github.com/ofunkey/python-challenge/blob/master/PyBank/main.py
+
 #Declare variable values
 months = []
 ChangeInProfit = []
@@ -13,17 +15,13 @@ ChangeInProfit = 0
 #Import csv file
 BudgetData_csv = os.path.join('.', 'Resources','budget_data.csv')
 
-# Open and read csv
+#Open and read csv
 with open(BudgetData_csv) as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=",")
 
-    # Read the header row first (skip this part if there is no header)
+    #Read the header row first (skip this part if there is no header)
     csv_header = next(csv_file)
     print(f"Header {csv_header}")
-
-    # Read the header row first (skip this part if there is no header)
-    csv_header = next(csv_file)
-    print(f"Header: {csv_header}")
 
     for row in csv_reader:
         #Increase MounthCount
